@@ -1,16 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {VgCoreModule} from 'videogular2/core';
+import {VgControlsModule} from 'videogular2/controls';
+import {VgOverlayPlayModule} from 'videogular2/overlay-play';
+import {VgBufferingModule} from 'videogular2/buffering';
+import {SingleMediaPlayer} from './single-media-player';
+
+
+import {AppComponent} from './app.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SingleMediaPlayer
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserModule,
+    VgCoreModule,
+    VgControlsModule,
+    VgOverlayPlayModule,
+    VgBufferingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, SingleMediaPlayer]
 })
-export class AppModule { }
+export class AppModule {
+}
